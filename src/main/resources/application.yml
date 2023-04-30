@@ -1,8 +1,8 @@
 server:
-  port: 8001 #指定运行端口
+  port: 8002 #指定运行端口
 logging:
   level:
-    root: WARN
+    root: INFO
   file:
     name: logs/${spring.cloud.client.ip-address}/${spring.application.name}.log
     path: logs
@@ -12,16 +12,11 @@ spring:
   security:
     user:
       name: admin
-      password: YIpotfg8Z@8TKA29ox
+      password: YIpotfg8Z8TKA29ox
 eureka:
   instance:
     hostname: ${spring.cloud.client.ip-address}  #指定主机地址
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    fetch-registry: false #指定是否要从注册中心获取服务（注册中心不需要开启）
-    register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
-    service-url:
-      defaultZone: http://127.0.0.1:8001/eureka
   server:
     enable-self-preservation: false  #保护模式是否开启
 management:
