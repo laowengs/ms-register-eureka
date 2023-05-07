@@ -20,6 +20,8 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:YIpotfg8Z8TKA29ox@127.0.0.1:8002/eureka
   server:
     enable-self-preservation: false  #保护模式是否开启
 management:
