@@ -15,13 +15,13 @@ spring:
       password: YIpotfg8Z8TKA29ox
 eureka:
   instance:
-    hostname: ${spring.cloud.client.ip-address}  #指定主机地址
+    hostname: ${HOST_NAME:localhost}  #指定主机地址
     instance-id:  ${spring.cloud.client.ip-address}:${server.port}
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: ${FETCH_EUREKA:false}
+    register-with-eureka: ${REGISTER_EUREKA:false}
     service-url:
-      defaultZone: http://admin:YIpotfg8Z8TKA29ox@127.0.0.1:8002/eureka
+      defaultZone: ${EUREKA_URL:http://admin:YIpotfg8Z8TKA29ox@127.0.0.1:8002/eureka}
   server:
     enable-self-preservation: false  #保护模式是否开启
 management:
